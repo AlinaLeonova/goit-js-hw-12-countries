@@ -1,5 +1,6 @@
 import './styles.css';
 
+
 const body = document.querySelector('body')
 const inputContainer = document.querySelector('.inputContainer');
 const countryList = document.querySelector('.country-list');
