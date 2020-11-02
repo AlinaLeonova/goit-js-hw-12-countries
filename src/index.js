@@ -55,8 +55,8 @@ const inputFn = function () {
                         searchResult.insertAdjacentHTML('beforeend', `
       
       <h2 class="">${element.name}</h2>
-      <img class="flag" width="200" src="${element.flag}">
-      <ul class="proStarnu">
+      <img width="200" src="${element.flag}">
+      <ul>
       <li>Capital: ${element.capital}</li>
       <li>Population: ${element.population}</li>
       <li>Languages:
