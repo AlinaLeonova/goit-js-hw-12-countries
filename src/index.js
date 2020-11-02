@@ -2,7 +2,7 @@ import './styles.css';
 
 
 const body = document.querySelector('body')
-const inputContainer = document.querySelector('.inputContainer');
+const inputContainer = document.querySelector('.input-container');
 const countryList = document.querySelector('.country-list');
 const clearBtn = document.querySelector('.clear-btn');
 
