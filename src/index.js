@@ -20,12 +20,25 @@ inputContainer.value = "";
 const inputFn = function () {
     if (inputContainer.value == '') {
         countryList.innerHTML = "";
+        return
     }
 
     fetch(`https://restcountries.eu/rest/v2/name/${inputContainer.value}`)
         .then(data => data.json())
         .then(data => {
             countryList.innerHTML = "";
+            if (data.length > 10) {
+                const errNotice2 = error({
+                    title: 'Too much result',
+                    text: "Please, try again",
+                    delay: 1000,
+                    modules: new Map([
+                        ...defaultModules,
+                        [PNotifyDesktop, {}
+                        ]])
+                })
+                return
+            }
             data.forEach(element => {
                 if (data.length === 1) {
                     searchResult.innerHTML = "";
@@ -65,40 +78,32 @@ const inputFn = function () {
       </li>
       </ul>
       `);
-                        localStorage.setItem('country', searchResult.innerHTML);
-                        element.languages.forEach(({ name }) => {
-                            document.querySelector('.lang-list').insertAdjacentHTML('beforeend', `<li>${name}</Li>`)
-                        })
 
+                        element.languages.forEach(({ name }) => {
+                            document.querySelector('.lang-list').insertAdjacentHTML('beforeend', `<li>${name}</li>`);
+
+                        })
+                        localStorage.setItem('country', searchResult.innerHTML);
                     })
                 };
 
-                if (data.length > 10) {
-                    const errNotice2 = error({
-                        title: 'Too much result',
-                        text: "Please, try again",
-                        delay: 1700,
-                        modules: new Map([
-                            ...defaultModules,
-                            [PNotifyDesktop, {}
-                            ]])
-                    })
-                    return
-                }
+
             })
         })
         .catch(err => {
             const errNotice1 = error({
                 title: "Enter correct country",
                 text: "Please, try again",
-                delay: 1700,
+                delay: 1000,
                 modules: new Map([
                     ...defaultModules,
                     [PNotifyDesktop, {}]
                 ])
 
             })
-        })
+        }
+
+        )
 }
 
 inputContainer.addEventListener('input', debounce(inputFn, 500));
