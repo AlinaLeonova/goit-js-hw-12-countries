@@ -81,13 +81,10 @@ const inputFn = function () {
 
                         element.languages.forEach(({ name }) => {
                             document.querySelector('.lang-list').insertAdjacentHTML('beforeend', `<li>${name}</li>`);
-
                         })
                         localStorage.setItem('country', searchResult.innerHTML);
                     })
                 };
-
-
             })
         })
         .catch(err => {
@@ -99,7 +96,6 @@ const inputFn = function () {
                     ...defaultModules,
                     [PNotifyDesktop, {}]
                 ])
-
             })
         }
 
