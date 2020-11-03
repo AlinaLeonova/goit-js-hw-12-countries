@@ -41,10 +41,11 @@ const inputFn = function () {
       </li>
       </ul>
       `);
-                    localStorage.setItem('country', searchResult.innerHTML);
+
                     element.languages.forEach(({ name }) => {
                         document.querySelector('.lang-list').insertAdjacentHTML('beforeend', `<li>${name}</li>`)
                     })
+                    localStorage.setItem('country', searchResult.innerHTML);
                 }
 
                 if (data.length > 1 && data.length < 10) {
