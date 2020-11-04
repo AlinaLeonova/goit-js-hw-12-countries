@@ -10,11 +10,16 @@ html {
 
 ul{
   list-style: none;
+  padding: 0;
 }
 
 body {
   /* background-color: black; */
   /* color: wheat; */
+  background-color: white;
+  background-image: url(./images/world-world-map-map-png-image-with-transparent-background-3d-world-map-transparent-background-png-920_519.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -24,17 +29,44 @@ body {
     height: 50px;
     width: 200px;
     font-size: 20px;
-    margin: 20px auto;
+    margin-top: 20px;
+    margin-bottom: 5px;
     border-radius: 5px;
+    border: solid 1px #93c7c9;
+
+    background-color: #93c7c98c;
+    color: #2b7bb0;
+
 }
 
 .country {
   display: block;
-  text-align: center;
+  width: 100%;
 }
 
 .clear-btn {
   font-size: 20px;
   padding: 5px 20px;
+  background-color: #93c7c98c;
+  border: solid 1px #93c7c9;
+  border-radius: 2px;
+   color: #2b7bb0;
+
 }
 
+.country-list {
+  display: block;
+  background-color: #1dadd88f;
+  width: 100%;
+ text-align: center;
+ font-size: 30px;
+color: #0e417d;
+
+}
+
+.result-search {
+  display: block;
+  text-align: center;
+  background-color: #8bc4c6a6;
+  color: #0e417d;
+}
