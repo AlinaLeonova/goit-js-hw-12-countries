@@ -42,6 +42,7 @@ body {
 .country {
   display: block;
   width: 100%;
+  cursor: pointer;
 }
 
 .clear-btn {
@@ -61,7 +62,7 @@ body {
  text-align: center;
  font-size: 30px;
 color: #0e417d;
-cursor: pointer;
+
 
 }
 
